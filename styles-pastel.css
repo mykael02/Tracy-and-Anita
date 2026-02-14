@@ -1,0 +1,623 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ffd4e5 0%, #c7ceea 50%, #d4f1f4 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: #5a4a5e;
+}
+
+/* Floating Hearts Background */
+.hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.floating-heart {
+    position: absolute;
+    animation: floatUp linear infinite;
+    opacity: 0.6;
+    user-select: none;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.6;
+    }
+    90% {
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Main Content */
+.main-content {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header Styles */
+.header {
+    text-align: center;
+    padding: 40px 20px;
+    animation: fadeInDown 1s ease-out;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.heart-icon {
+    font-size: 4rem;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+.title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5rem;
+    color: #ff6b9d;
+    text-shadow: 2px 2px 4px rgba(255, 107, 157, 0.2);
+    margin: 20px 0 10px;
+}
+
+.subtitle {
+    font-size: 1.3rem;
+    color: #c77ddb;
+    font-weight: 300;
+}
+
+/* Valentine Cards Section */
+.cards-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px 20px;
+}
+
+.valentine-card {
+    width: 350px;
+    height: 450px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.anita-card .card-front {
+    background: linear-gradient(145deg, #ffb3d9 0%, #ff8fab 50%, #ff6b9d 100%);
+}
+
+.tracy-card .card-front {
+    background: linear-gradient(145deg, #b3d9ff 0%, #8fabff 50%, #6b9dff 100%);
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+}
+
+.valentine-card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    box-shadow: 0 15px 35px rgba(255, 107, 157, 0.2),
+                0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-front {
+    color: white;
+    justify-content: flex-start;
+    padding-top: 20px;
+}
+
+.card-back {
+    background: linear-gradient(145deg, #fff 0%, #fff0f5 100%);
+    transform: rotateY(180deg);
+    text-align: center;
+}
+
+.photo-placeholder {
+    width: 180px;
+    height: 180px;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-front h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.click-hint {
+    font-size: 0.95rem;
+    opacity: 0.9;
+    margin-top: 20px;
+    animation: fadeInOut 2s ease-in-out infinite;
+}
+
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+.card-back .message {
+    color: #5a4a5e;
+}
+
+.card-back h3 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    color: #ff6b9d;
+    margin-bottom: 15px;
+}
+
+.card-back p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+.card-back .signature {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.3rem;
+    color: #ff6b9d;
+    margin-top: 20px;
+}
+
+/* Special Section */
+.special-section {
+    padding: 60px 20px;
+}
+
+.special-message {
+    background: white;
+    border-radius: 30px;
+    padding: 50px 40px;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(255, 107, 157, 0.15);
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.special-message::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #ff6b9d, #c77ddb, #6b9dff);
+}
+
+.sparkle {
+    font-size: 2rem;
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2) rotate(180deg);
+        opacity: 0.8;
+    }
+}
+
+.special-message h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    background: linear-gradient(90deg, #ff6b9d, #c77ddb, #6b9dff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 20px 0;
+}
+
+.special-message > p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #6d4a5a;
+    margin-bottom: 30px;
+}
+
+/* Love Meter */
+.love-meter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.love-label {
+    font-weight: 600;
+    color: #ff6b9d;
+}
+
+.meter-bar {
+    width: 200px;
+    height: 20px;
+    background: #ffe4ec;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.meter-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #ff6b9d, #c77ddb);
+    border-radius: 10px;
+    animation: fillMeter 2s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes fillMeter {
+    to {
+        width: 100%;
+    }
+}
+
+.love-percent {
+    font-weight: 600;
+    color: #ff6b9d;
+    font-size: 1.2rem;
+}
+
+/* Interactive Section */
+.interactive-section {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.surprise-btn {
+    background: linear-gradient(145deg, #ff6b9d, #c77ddb);
+    color: white;
+    border: none;
+    padding: 20px 50px;
+    font-size: 1.2rem;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(255, 107, 157, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.surprise-btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(255, 107, 157, 0.4);
+}
+
+.surprise-btn:active {
+    transform: translateY(-2px) scale(1.02);
+}
+
+.btn-hearts {
+    display: block;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: #c77ddb;
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
+.footer .year {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+
+.modal.active {
+    display: flex;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-content {
+    background: white;
+    padding: 50px;
+    border-radius: 30px;
+    text-align: center;
+    max-width: 500px;
+    margin: 20px;
+    position: relative;
+    animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2rem;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: #ff6b9d;
+}
+
+.modal-hearts {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+.modal-content h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    background: linear-gradient(90deg, #ff6b9d, #c77ddb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 15px;
+}
+
+.modal-content p {
+    font-size: 1.1rem;
+    color: #6d4a5a;
+    line-height: 1.7;
+}
+
+.modal-animation {
+    margin-top: 25px;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.modal-animation span {
+    animation: bounce 1s ease-in-out infinite;
+}
+
+.modal-animation span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.modal-animation span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Image Modal */
+.image-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 110;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+
+.image-modal.active {
+    display: flex;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-image {
+    max-width: 90%;
+    max-height: 90vh;
+    border-radius: 15px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+    animation: zoomIn 0.4s ease;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.image-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 3rem;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: color 0.3s;
+    z-index: 111;
+}
+
+.image-close-btn:hover {
+    color: rgba(255, 255, 255, 1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .valentine-card {
+        width: 100%;
+        max-width: 350px;
+        height: 400px;
+    }
+    
+    .card-front h2 {
+        font-size: 1.8rem;
+    }
+    
+    .special-message {
+        padding: 40px 25px;
+    }
+    
+    .special-message h2 {
+        font-size: 2rem;
+    }
+    
+    .modal-content {
+        padding: 35px 25px;
+    }
+    
+    .modal-content h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 2rem;
+    }
+    
+    .heart-icon {
+        font-size: 3rem;
+    }
+    
+    .cards-section {
+        padding: 20px 10px;
+    }
+    
+    .valentine-card {
+        height: 380px;
+    }
+    
+    .card-front,
+    .card-back {
+        padding: 20px;
+    }
+    
+    .surprise-btn {
+        padding: 15px 35px;
+        font-size: 1rem;
+    }
+}

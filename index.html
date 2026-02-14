@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day! - Pastel Theme</title>
+    <link rel="stylesheet" href="styles-pastel.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Floating Hearts Background -->
+    <div class="hearts-container" id="heartsContainer"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="header">
+            <div class="heart-icon">💕</div>
+            <h1 class="title">Happy Valentine's Day!</h1>
+            <p class="subtitle">To My Dearest Family</p>
+        </header>
+
+        <!-- Valentine Cards Section -->
+        <section class="cards-section">
+            <!-- Card for Anita -->
+            <div class="valentine-card anita-card" data-person="anita">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="photo-placeholder">
+                            <img src="anita.jpg" alt="Anita" class="card-photo">
+                        </div>
+                        <h2>For Anita</h2>
+                        <p class="click-hint">Click to open 💌</p>
+                    </div>
+                    <div class="card-back">
+                        <div class="message">
+                            <h3>Dear Anita,</h3>
+                            <p>
+                                To my big sister.
+                            </p>
+                            <p>
+                                Thank you for being such an amazing person, for the memories 
+                                we share, and for always being there for us. You deserve all 
+                                the happiness in the world!
+                            </p>
+                            <p class="signature">Forever grateful 💕</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card for Tracy -->
+            <div class="valentine-card tracy-card" data-person="tracy">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="photo-placeholder">
+                            <img src="tracy.jpg" alt="Tracy" class="card-photo">
+                        </div>
+                        <h2>For Tracy</h2>
+                        <p class="click-hint">Click to open 💌</p>
+                    </div>
+                    <div class="card-back">
+                        <div class="message">
+                            <h3>Dear Tracy,</h3>
+                            <p>
+                                To my vertically challenged big sister.
+                            </p>
+                            <p>
+                                You are a shining star in our life. 
+                                Thank you for always taking care of mummy and daddy.
+                            </p>
+                            <p class="signature">With all my love 💕</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Special Message Section -->
+        <section class="special-section">
+            <div class="special-message">
+                <div class="sparkle">✨</div>
+                <h2>Anita & Tracy 💕</h2>
+                <p>This Valentine's Day, I want you both to know how incredibly special you are to me. 
+                   You bring so much love, light, and laughter into my life. I'm forever grateful 
+                   for the bond we share and the beautiful moments we've created together.</p>
+                <div class="love-meter">
+                    <span class="love-label">Love Level:</span>
+                    <div class="meter-bar">
+                        <div class="meter-fill"></div>
+                    </div>
+                    <span class="love-percent">∞%</span>
+                </div>
+                <div class="sparkle">✨</div>
+            </div>
+        </section>
+
+        <!-- Interactive Section -->
+        <section class="interactive-section">
+            <button class="surprise-btn" id="surpriseBtn">
+                <span class="btn-text">Click for a Surprise!</span>
+                <span class="btn-hearts">💕🌸💕</span>
+            </button>
+        </section>
+
+        <footer class="footer">
+            <p>Made with 💕 for my favorite people</p>
+            <p class="year">Valentine's Day 2026</p>
+        </footer>
+    </main>
+
+    <!-- Surprise Modal -->
+    <div class="modal" id="surpriseModal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+            <div class="modal-hearts">💕🌸💕</div>
+            <h2>You Are Loved!</h2>
+            <p>No matter the distance or time, you'll always have a special place in my heart.</p>
+            <div class="modal-animation">
+                <span>🌸</span>
+                <span>💕</span>
+                <span>🌸</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Modal -->
+    <div class="image-modal" id="imageModal">
+        <span class="image-close-btn" id="closeImageModal">&times;</span>
+        <img class="modal-image" id="modalImage" src="" alt="">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
